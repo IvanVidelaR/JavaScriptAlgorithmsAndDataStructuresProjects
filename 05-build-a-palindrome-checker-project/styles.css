@@ -138,7 +138,7 @@ label {
     transition: all 0.3s ease 0s;
 }
 
-#palindrome-definition-bulb:hover {
+#palindrome-definition-bulb.show-font:hover {
     font-size: 2rem;
     opacity: 0.8;
     cursor: pointer;
