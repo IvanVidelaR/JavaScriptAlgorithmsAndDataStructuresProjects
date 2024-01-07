@@ -10,8 +10,8 @@ palindromeBulbDefinition.addEventListener("click", ()=>{
     palindromeBulbDefinition.classList.remove('show-font');
 });
 
-checkBtn.addEventListener("click", ()=>{
-    if(textInput.value == "")
+const palindromeChecker = (input) => {
+    if(input == "")
     {
         alert("Please input a value");
     }
@@ -20,17 +20,17 @@ checkBtn.addEventListener("click", ()=>{
         resultDiv.innerHTML = "";
         // resultDiv.replaceChildren();
 
-        const cleanInput = (textInput.value).replace(/[^A-Za-z0-9]/g, '').toLowerCase();
-        arrayPalindrome = [...cleanInput].join("");
-        arrayPalindromeInvertido = [...arrayPalindrome].reverse().join("");
+        const cleanInput = (input).replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+        const arrayPalindrome = [...cleanInput].join("");
+        const arrayPalindromeInvertido = [...arrayPalindrome].reverse().join("");
 
         if(arrayPalindrome == arrayPalindromeInvertido)
         {
-            resultMsg = `<strong class="black-italic">${textInput.value}</strong> is a palindrome`;
+            resultMsg = `<strong class="black-italic">${input}</strong> is a palindrome`;
         }
         else
         {
-            resultMsg = `<strong class="black-italic">${textInput.value}</strong> is not a palindrome`;
+            resultMsg = `<strong class="black-italic">${input}</strong> is not a palindrome`;
         }
 
         const pTag = document.createElement('p');
@@ -40,7 +40,19 @@ checkBtn.addEventListener("click", ()=>{
 
         resultDiv.classList.remove("hidden");
     }
+}
+
+checkBtn.addEventListener("click", () => {
+    palindromeChecker(textInput.value);
 });
+
+textInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+        palindromeChecker(textInput.value);
+        textInput.value = '';
+    }
+});
+
 
 
 
