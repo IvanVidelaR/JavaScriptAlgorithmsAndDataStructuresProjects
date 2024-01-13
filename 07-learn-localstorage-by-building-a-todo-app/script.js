@@ -10,7 +10,7 @@ const titleInput = document.getElementById("title-input");
 const dateInput = document.getElementById("date-input");
 const descriptionInput = document.getElementById("description-input");
 
-const taskData = [];
+const taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
 
 const addOrUpdateTask = () => {
@@ -28,6 +28,7 @@ const addOrUpdateTask = () => {
 		taskData[dataArrIndex] = taskObj;
 	}
 
+	localStorage.setItem("data", JSON.stringify(taskData));
 	updateTaskContainer()
 	reset()
 };
@@ -58,6 +59,7 @@ const deleteTask = (buttonEl) => {
 
 	buttonEl.parentElement.remove();
 	taskData.splice(dataArrIndex, 1);
+	localStorage.setItem("data", JSON.stringify(taskData));
 }
 
 const editTask = (buttonEl) => {
@@ -82,9 +84,11 @@ const reset = () => {
 	currentTask = {};
 }
 
-openTaskFormBtn.addEventListener("click", () =>
-	taskForm.classList.toggle("hidden")
-);
+if(taskData.length) {
+	updateTaskContainer();
+}
+
+openTaskFormBtn.addEventListener("click", () => taskForm.classList.toggle("hidden"));
 
 closeTaskFormBtn.addEventListener("click", () => {
 	const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
