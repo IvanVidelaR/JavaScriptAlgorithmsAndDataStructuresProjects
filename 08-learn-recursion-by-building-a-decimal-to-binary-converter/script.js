@@ -2,7 +2,17 @@ const numberInput = document.getElementById("number-input");
 const convertBtn = document.getElementById("convert-btn");
 const result = document.getElementById("result");
 
+const decimalToBinary = (input) => {
+    const inputs = [];
+    const quotients = [];
+    const remainders = [];
 
+    while (input > 0) {
+
+
+        input = 0;
+    }
+};
 
 const checkUserInput = () => {
     if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
@@ -10,7 +20,8 @@ const checkUserInput = () => {
         return;
     }
 
-    console.log(numberInput.value);
+    decimalToBinary(parseInt(numberInput.value));
+    numberInput.value = "";
 };
 
 convertBtn.addEventListener("click", checkUserInput);
