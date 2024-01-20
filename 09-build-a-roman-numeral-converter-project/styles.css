@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap');
 
+:root {
+    --background-darker: #271c19;
+    --background: #55423d;
+    --headline: #fffffe;
+    --paragraph: #fff3ec;
+    --button: #ffc0ad;
+    --button-text: #271c19;
+    --table: #c89507;
+    --cream: #F2F3AE;
+}
+
 * { 
     margin: 0;
     padding: 0;
@@ -8,7 +19,14 @@
 
 body {
     font-family: 'Luxurious Roman', serif;
+    background-color: var(--background-darker);
 }
+
+h1 {
+    margin-top: 4rem;
+    color: var(--headline);
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -19,11 +37,17 @@ body {
 }
 
 .roman-numeral-div {
+    height: 150px;
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: 30px;
-    gap: .5em;
+    gap: .8em;
+    background-color: var(--background);
+    padding: 1em 2em;
+    color: var(--paragraph);
+    border-radius: 20px;
+    box-shadow: 0 6px 6px var(--button);
 }
 
 .table {
@@ -31,13 +55,22 @@ body {
     border-collapse: collapse;
     margin-bottom: 1em;
     margin-top: 1em;
-    border: 1px #aaaaaa solid;
+    border: 1px var(--background-darker) solid;
     text-align: center;
+    gap: 1rem;
+    background-color: var(--cream);
+}
+
+.table-container {
+    padding: 1rem 2rem;
+    background-color: var(--table);
+    border-radius: 20px;
+    margin-bottom: 4em;
 }
 
 div.table div.cell {
     padding: 0.4em;
-    border: 1px #aaaaaa solid;
+    border: 1px var(--background-darker) solid;
 
 }
 
@@ -55,4 +88,38 @@ div.cell {
 
 div.caption{
     display: table-caption;
+    background-color: var(--table);
+    margin-bottom: 1em;
+    font-size: 1.3rem;
+}
+
+button {
+    background-color: var(--button);
+    color: var(--background-darker);
+    padding: 10px;
+    width: 90px;
+    border-radius: 5px;
+    transition: all 0.3s ease 0s;
+    margin: 10px auto 0 auto;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    scale: 1.08;
+    background-color: #ffd1c3;
+}
+
+input {
+    background-color: var(--background);
+    border: none;
+    border-bottom: 1px solid var(--background-darker);
+    text-align: center;
+    color: var(--paragraph);
+    margin-top: 10px;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--background-darker);
 }
