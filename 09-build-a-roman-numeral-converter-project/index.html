@@ -4,19 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roman Numeral Converter</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main class="container">
-        <div>
+        <h1>ROMAN NUMERAL CONVERTER</h1>
+        <div class="roman-numeral-div">
             <label for="number">Enter a number to convert:</label>
             <input id="number" type="number" required>
             <button type="button">Convert</button>
         </div>
         <div class="hidden" id="output"></div>
         <div class="table">
-            <p class="light-bulb">
-                <span id="light-bulb" class="show-font" role="img" aria-label="light-bulb">&#128161;</span>
-            </p>
+            <div class="caption"><span id="light-bulb" class="show-font" role="img" aria-label="light-bulb">&#128161;</span>
+                Roman Numerals Chart
+            </div>
+            <div class="row">
+                <div class="cell headerCell">Roman numerals</div>
+                <div class="cell headerCell">Arabic numerals</div>
+            </div>
+            <div class="row">
+                <div class="cell">M</div>
+                <div class="cell">1000</div>
+            </div>
+            <div class="row">
+                <div class="cell">D</div>
+                <div class="cell">500</div>
+            </div>
+            <div class="row">
+                <div class="cell">C</div>
+                <div class="cell">100</div>
+            </div>
+            <div class="row">
+                <div class="cell">L</div>
+                <div class="cell">50</div>
+            </div>
+            <div class="row">
+                <div class="cell">X</div>
+                <div class="cell">10</div>
+            </div>
+            <div class="row">
+                <div class="cell">V</div>
+                <div class="cell">5</div>
+            </div>
+            <div class="row">
+                <div class="cell">I</div>
+                <div class="cell">1</div>
+            </div>
         </div>  
     </main>
 </body>
