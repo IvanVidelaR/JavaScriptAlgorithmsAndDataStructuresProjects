@@ -26,6 +26,7 @@ h1 {
     margin-top: 4rem;
     color: var(--headline);
     font-size: 2.5em;
+    
 }
 
 .container {
@@ -35,10 +36,11 @@ h1 {
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
+    text-align: center;
 }
 
 .roman-numeral-div {
-    height: 150px;
+    max-height: 150px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -49,6 +51,12 @@ h1 {
     color: var(--paragraph);
     border-radius: 20px;
     box-shadow: 0 6px 6px var(--button);
+}
+
+#output {
+    text-align: center;
+    padding: 1em 2em;
+    border-radius: 5px;
 }
 
 .table {
@@ -66,7 +74,7 @@ h1 {
     padding: 1rem 2rem;
     background-color: var(--table);
     border-radius: 20px;
-    margin-bottom: 4em;
+    margin: 30px 30px 4em 30px;
 }
 
 div.table div.cell {
@@ -123,4 +131,20 @@ input {
 input:focus {
     outline: none;
     border-bottom: 2px solid var(--background-darker);
+}
+
+.hidden {
+    display: none;
+}
+
+.texto-error {
+    background-color: pink;
+    box-shadow: 0 6px 6px darkred;
+    color: darkred;
+}
+
+.texto-correcto {
+    background-color: var(--background);
+    color: var(--paragraph);
+    box-shadow: 0 6px 6px var(--button);
 }
