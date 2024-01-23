@@ -10,9 +10,25 @@ const getMedian = (array) => {
 }
 
 const getMode = (array) => {
-
+    const counts = {};
+    array.forEach((el) => {
+        counts[el] = (counts[el] || 0) + 1;
+    })
+    if (new Set(Object.values(counts)).size === 1) {
+        return null;
+    }
+    const highest = Object.keys(counts).sort(
+        (a, b) => counts[b] - counts[a]
+    )[0];
+    const mode = Object.keys(counts).filter(
+        (el) => counts[el] === counts[highest]
+    );
+    return mode.join(", ");
 }
 
+const getRange = (array) => {
+    return Math.max(...array) - Math.min(...array);
+}
 
 const calculate = () => {
     const value = document.querySelector("#numbers").value;
@@ -21,7 +37,10 @@ const calculate = () => {
     
     const mean = getMean(numbers);
     const median = getMedian(numbers);
+    const mode = getMode(numbers);
+
 
     document.querySelector("#mean").textContent = mean;
     document.querySelector("#median").textContent = median;
+    document.querySelector("#mode").textContent = mode;
 }
