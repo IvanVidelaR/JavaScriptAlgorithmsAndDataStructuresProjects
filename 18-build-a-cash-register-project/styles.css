@@ -1,15 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container {
-    margin: 0 auto;
-    text-align: center;
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #0EB1D2;
 }
 
-.input-div {
+h1 {
+    font-size: 3em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     margin: 20px 0;
 }
 
@@ -18,25 +29,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
+
 }
 
 .price-screen {
-    padding: 10px;
-    border: 10px solid black;
-    margin-left: -90px;
+    padding: 0.5rem;
+    border: 0.5rem solid black;
+    margin-left: -5.5rem;
+    background-color: white;
 }
 
 .connector {
     background-color: black;
-    width: 35px;
-    height: 40px;
+    width: 2.3rem;
+    height: 2.5rem;
     margin-left: -50px;
 }
 
 .middle-register {
     background-color: black;
-    width: 300px;
-    height: 100px;
+    width: 19rem;
+    height: 6.3rem;
     border-radius: 20px 20px 0 0;
     display: flex;
     justify-content: space-around;
@@ -45,18 +59,17 @@
 
 .cash-register-display {
     background-color: white;
-    max-width: 150px;
-    max-height: 70px;
+    max-width: 9.5rem;
+    max-height: 4.6rem;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    
 }
 
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    width: 50px;
+    width: 3.15rem;
     gap: 10px;
 }
 
@@ -70,15 +83,128 @@
 
 .bottom-register {
     background-color: black;
-    width: 450px;
-    height: 100px;
+    width: 28.5rem;
+    height: 6.3rem;
     border-radius: 40px 40px 0 0;
+    overflow: hidden;
 }
 
 .rectangle {
-    width: 385px;
-    height: 100px;
+    width: 24.3rem;
+    height: 6.3rem;
     border: 10px solid white;
     margin: 30px 0 0 30px;
     border-radius: 10px 10px 0 0;
+}
+
+#purchase-btn {
+    background-color: #FF3366;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#purchase-btn:hover {
+    background-color: #f07795;
+    scale: 1.05;
+}
+
+.input-div {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    background-color: #685F74;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 6px 6px #FF3366;
+}
+
+#cash {
+    background-color: #685F74;
+    border: none;
+    border-bottom: 1px solid #F4EBE8;
+    text-align: center;
+    color: #F4EBE8;
+}
+
+#cash:focus {
+    outline: none;
+    border-bottom: 2px solid #F4EBE8;
+}
+
+.input-div label {
+    color: #F4EBE8;
+    font-style: italic;
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .bottom-register {
+        width: 150%; /* Ajustes para pantallas pequeñas */
+    }
+
+    .middle-register {
+        width: 100%;
+    }
+
+    .buttons {
+        width: 30%;
+    }
+
+    .rectangle { 
+        width: 85%;
+    }
+
+}
+
+@media screen and (max-width: 370px) {
+    .bottom-register {
+        width: 150%; /* Ajustes para pantallas pequeñas */
+    }
+
+    .middle-register {
+        width: 90%;
+    }
+
+    .buttons {
+        width: 10%;
+    }
+
+    .rectangle { 
+        width: 75%;
+    }
+
+    .price-screen {
+        padding: 0.2rem;
+        border: 0.5rem solid black;
+        margin-left: -5.2rem;
+        
+    }
+    
+    .connector {
+        background-color: black;
+        width: 1.8rem;
+        height: 2rem;
+        margin-left: -50px;
+    }
+
+    .button {
+        width: 10px;
+        height: 10px;
+    }
+
+    .cash-register-display {
+        max-width: 6rem;
+        max-height: 5rem;
+        
+    }
 }
