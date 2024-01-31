@@ -33,12 +33,9 @@ const updateUI = () => {
     };
 
     cashRegisterList.innerHTML = "";
-    cid.forEach((currency) => cashRegisterList.innerHTML += `<li>${currencyChange[currency[0]]}: $${currency[1].toFixed(2)}</li>`);
-
-    cash.value = "";
-
-    console.log(cid);
-    console.log(displayChangeDue);
+    cid.map((currency) => cashRegisterList.innerHTML += `<li>${currencyChange[currency[0]]}: $${currency[1].toFixed(2)}</li>`);
+    
+    inputCash.value = ""; // Corregido "cash" a "inputCash"
 }
 
 updateUI();
@@ -56,32 +53,33 @@ const checkCashRegister = () => {
         return;
     }
 
-    debugger;
-
     let changeDue = (Number(inputCash.value) * 100) - (price * 100);
     let denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
     let cidReverse = [...cid].reverse();
     let change = [];
     let availableFunds = 0;
+    displayChangeDue.innerHTML = '<p>Status: OPEN</p>'
 
     for(let i = 0; i < cid.length; i++) {
-        availableFunds += cid[i][1];
+        availableFunds += cid[i][1] * 100;
     }
 
-    if (changeDue / 100 > availableFunds) {
+    if (changeDue > availableFunds) {
         return (displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
     }
 
-    if (changeDue / 100 === availableFunds) {
+    if (changeDue === availableFunds) {
         displayChangeDue.innerHTML = '<p>Status: CLOSED</p>';
     }
 
+    let contador, flagWhile;
+    
     for(let i = 0; i < cidReverse.length; i++)
     {
         contador = 0;
         flagWhile = false;
 
-        while(changeDue >= denominations[i] && cidReverse[i][1] * 100 >= denominations[i])
+        while(changeDue >= denominations[i] && cidReverse[i][1] > 0)
         { 
             changeDue -= denominations[i];
             cidReverse[i][1] -= denominations[i] / 100;
@@ -96,9 +94,6 @@ const checkCashRegister = () => {
     if (changeDue / 100 > 0) {
         return (displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
     }
-    else {
-        displayChangeDue.innerHTML = '<p>Status: OPEN</p>'
-    }
 
     change.map((currency) => {
         displayChangeDue.innerHTML += `<p>${currency[0]}: $${currency[1]}</p>`
@@ -107,11 +102,10 @@ const checkCashRegister = () => {
     updateUI();
 }
 
-
 purchaseButton.addEventListener("click", checkCashRegister)
 
 inputCash.addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
-            checkCashRegister();
-        }
-    });
+    if (e.key === 'Enter') {
+        checkCashRegister();
+    }
+});
