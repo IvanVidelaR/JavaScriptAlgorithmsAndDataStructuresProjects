@@ -143,6 +143,10 @@ h1 {
     font-style: italic;
 }
 
+#change-due {
+    margin: 20px 0 10px 0;
+}
+
 @media screen and (max-width: 500px) {
     h1 {
         font-size: 2em;
