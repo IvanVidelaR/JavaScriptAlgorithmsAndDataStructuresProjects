@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px 0px rgba(223, 220, 220, 0.75);
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 5px;
+
+}

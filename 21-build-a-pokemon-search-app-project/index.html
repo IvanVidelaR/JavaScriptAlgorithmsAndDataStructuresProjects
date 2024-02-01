@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Search App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Pokemon Search App</h1>
+        <div class="container">
+            <div class="input-div">
+                <label for="search-input">Search for Pokemón Name or ID: </label>
+                <input id="search-input" type="text" />
+                <button id="search-button">Search</button>
+            </div>
+            <div class="top-container">
+                <div id="sprite-container" class="sprite-container"></div>
+                <div class="name-and-id">
+                    <span id="pokemon-name">Charizard</span>
+                    <span id="pokemon-id">#6</span>
+                </div> 
+                <div id="types">
+                    <span class="fire">FIRE</span>
+                    <span class="flying">FLYING</span>
+                </div>
+                <div class="size">
+                    <div id="weight">905</div>
+                    <div id="height">17</div>
+                </div>
+            </div>
+            <div class="bottom-container">
+                <div class="grid-container">
+                    <p class="base">Base</p>
+                    <p class="stats">Stats</p>
+                    <p>HP:</p>
+                    <p id="hp">78</p>
+                    <p>Attack:</p>
+                    <p id="attack">84</p>
+                    <p>Defense:</p>
+                    <p id="defense">78</p>
+                    <p>Sp. Attack:</p>
+                    <p id="special-attack">109</p>
+                    <p>Sp. Defense:</p>
+                    <p id="special-defense">85</p>
+                    <p>Speed:</p>
+                    <p id="speed" class="speed">100</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
