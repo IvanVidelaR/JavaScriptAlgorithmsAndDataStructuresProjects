@@ -11,23 +11,31 @@
         <h1>Pokemon Search App</h1>
         <div class="container">
             <div class="input-div">
-                <label for="search-input">Search for Pokemón Name or ID: </label>
+                <label for="search-input"><i>Search for Pokemón Name or ID: </i></label>
                 <input id="search-input" type="text" />
                 <button id="search-button">Search</button>
             </div>
             <div class="top-container">
-                <div id="sprite-container" class="sprite-container"></div>
+                <div id="sprite-container" class="sprite-container">
+                    <img id="sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" alt="charizard front default sprite">
+                </div>
                 <div class="name-and-id">
                     <span id="pokemon-name">Charizard</span>
                     <span id="pokemon-id">#6</span>
                 </div> 
                 <div id="types">
-                    <span class="fire">FIRE</span>
-                    <span class="flying">FLYING</span>
+                    <span class="type fire">FIRE</span>
+                    <span class="type flying">FLYING</span>
                 </div>
                 <div class="size">
-                    <div id="weight">905</div>
-                    <div id="height">17</div>
+                    <div id="weight">
+                        <p class="number">905</p>
+                        <p class="small-gray">weight</p>
+                    </div>
+                    <div id="height">
+                        <p class="number">17</p>
+                        <p class="small-gray">height</p>
+                    </div>
                 </div>
             </div>
             <div class="bottom-container">
