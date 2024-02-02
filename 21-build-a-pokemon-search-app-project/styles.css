@@ -87,7 +87,6 @@ label {
 }
 
 .grid-container p {
-    background-color: #ff6f52;
     text-align: center;
     padding: 10px;
 }
@@ -96,9 +95,8 @@ label {
     width: 150px;
 }
 
-.sprite-container {
+#sprite-container {
     padding: 10px 75px; 
-    background-color: #ff6f52;
     border-radius: 0 0 20px 20px;
 }
 
@@ -227,4 +225,15 @@ label {
 
 .fairy {
     background-color: #ed99ed;
+}
+
+.base-color {
+    background-color: #A167A5;
+}
+
+@media only screen and (max-width: 280px) {
+    #sprite-container {
+        padding: 10px 50px; 
+        border-radius: 0 0 20px 20px;
+    }
 }
